@@ -244,7 +244,7 @@ na qual está animação foi criada através dos keyframes
 @media screen and (max-width: 600px) {
   /* Colocando sempre para baixo o menu que vem como primeiro nos meus valores de alinhamento */
   .container_2 {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 
   .menu_fixed {
