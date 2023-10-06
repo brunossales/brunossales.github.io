@@ -1,0 +1,263 @@
+* {
+  padding: 0;
+  margin: 0;
+
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgba(236, 187, 142, 0.569);
+  font-family: sans-serif;
+  width: 100%;
+}
+
+/* Dropdown */
+select {
+  border: 1px solid white;
+  background-color: #d2691e;
+  color: white;
+
+  border-radius: 5px;
+  padding: 5px 10px;
+  outline: none;
+  width: 300px;
+}
+
+/* 1a questão */
+nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: burlywood;
+
+  padding: 20px 0px;
+
+  gap: 10%;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #d2691e;
+
+  border: 1px solid white;
+  /* 
+    Letra C da questão 1
+  */
+  box-shadow: 1px 1px 4px #d2691e;
+  border-radius: 5px;
+
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+
+  cursor: pointer;
+
+  transition: background 1s;
+}
+
+button:hover {
+  background-color: darkred;
+}
+
+.separador_nav {
+  display: flex;
+  gap: 20px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+/* Dropdown com 300px */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ecd488;
+  width: 300px;
+  color: black;
+  box-shadow: 0px 8px 16px 0px rgba(148, 74, 74, 0.456);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown-content p:active {
+  background-color: #d2691e88;
+  transition: all 0.7s;
+}
+
+.dropdown-content p {
+  border-bottom: 1px solid black;
+  padding: 10px 0;
+}
+
+/* Letra B questão 1 */
+/* Clicar para aparecer o dropdown */
+.dropdown:active .dropdown-content {
+  display: block;
+}
+
+/* Active é só enquanto estou clicando 
+    focus-whitin é enquanto está em foco
+*/
+.dropdown:focus-within .dropdown-content {
+  display: block;
+}
+
+/* Container 2, lado esquerdo e direito */
+
+.container_2 {
+  width: 100%;
+  display: flex;
+  height: 100%;
+}
+
+.menu_fixed {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(214, 139, 0);
+  gap: 20px;
+  padding: 20px 0;
+  border-radius: 0 10px 10px 0;
+  width: 20vw;
+  height: 1200px;
+}
+
+/* Conteúdo (Questão 3) */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80vw;
+  height: 1200px;
+
+  gap: 5px;
+}
+
+/* Componente de loader (Questão 3) */
+
+/* Classe padrão load 
+
+Sua posição é relativa ao componente pai
+Tem uma animação chamada de mulShdSpin
+na qual está animação foi criada através dos keyframes
+*/
+
+.loader {
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  animation: mulShdSpin 1.1s infinite ease;
+  transform: translateZ(0);
+
+  margin-top: 30px;
+}
+
+/** 
+ * Criando a animação de acordo como eu quiser
+ * Utilizando um keyframe e nomeando ela de mulShdSpin
+ */
+@keyframes mulShdSpin {
+  0%,
+  100% {
+    box-shadow: 0em -2.6em 0em 0em #ffffff,
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.5),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7);
+  }
+  12.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.7),
+      1.8em -1.8em 0 0em #ffffff, 2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5);
+  }
+  25% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.5),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7), 2.5em 0em 0 0em #ffffff,
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+  37.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.7), 1.75em 1.75em 0 0em #ffffff,
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.5),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.7), 0em 2.5em 0 0em #ffffff,
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+  62.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.5),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.7), -1.8em 1.8em 0 0em #ffffff,
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+  75% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.5),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.7), -2.6em 0em 0 0em #ffffff,
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+  87.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
+  }
+}
+
+/* Media query (Questão 4) */
+
+@media screen and (max-width: 600px) {
+  /* Colocando sempre para baixo o menu que vem como primeiro nos meus valores de alinhamento */
+  .container_2 {
+    flex-direction: column-reverse;
+  }
+
+  .menu_fixed {
+    width: 100%;
+    border-radius: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: max-content;
+    padding: 0;
+  }
+
+  .content {
+    width: 100%;
+    height: 100vh;
+  }
+}
